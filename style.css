@@ -1,4 +1,3 @@
-
 /* scroll */
 
 * {
@@ -45,86 +44,96 @@ hr {
 
 /* taskList */
 
-#task{
+#task {
   width: 850px;
   height: 600px;
   border: solid seashell 2px;
-  box-shadow: 0 0 50px rgba(0,0,0,0.9);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
   border-radius: 10px;
   margin: 30px auto;
   display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: space-around;
-    background: black;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  background: black;
 }
-#task1, #task2{
+#task1,
+#task2 {
   width: 400px;
   height: 560px;
   border: black solid 2px;
   margin: 5px;
-  background: white; 
+  background: white;
   padding-top: 30px;
-  
 }
-#task1{
+#task1 {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   padding-left: 30px;
 }
-#task2{
+#task2 {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   text-align: center;
 }
 
-
-#text-task1, #text-task2{
-margin-bottom: 15px;
-color: red;
+#text-task1,
+#text-task2 {
+  margin-bottom: 15px;
+  color: red;
 }
 
-#textInput{
+#textInput {
   border: none;
   outline: none;
 }
-#lineInput{
+#lineInput {
   width: 173px;
   margin-left: 112px;
-    border: black solid 1px;
-    margin-bottom: 20px;
+  border: black solid 1px;
+  margin-bottom: 20px;
 }
-#btn{
+#btn {
   color: white;
   background: black;
   margin-top: 10px;
-    width: 70px;
-    height: 30px;
-    border-radius: 4px;
+  width: 70px;
+  height: 30px;
+  border-radius: 4px;
 }
-#warning{
+#warning,
+#warning1,
+#warning2 {
   width: 600px;
-    height: 50px;
-    border-radius: 6px;
-    border: red 1px solid;
-    padding-top: 1px;
-    text-align: center;
-    position: relative;
-    top: 50px;
-    right: 300px;
-    background: pink;
-    color: palevioletred;
-    display: none;
+  height: 50px;
+  border-radius: 6px;
+  border: red 1px solid;
+  padding-top: 1px;
+  text-align: center;
+  position: relative;
+  top: 50px;
+  right: 300px;
+  background: pink;
+  color: palevioletred;
+  display: none;
 }
-#x{
+#x,
+#x1,
+#x2 {
   position: relative;
   top: -11px;
   left: 170px;
-    border: none;
-    background: pink;
-    color: palevioletred;
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
-    cursor: pointer;
+  border: none;
+  background: pink;
+  color: palevioletred;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+#x1 {
+  left: 100px;
+}
+#x2 {
+  left: 135px;
 }

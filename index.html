@@ -11,40 +11,56 @@
 
 <body>
 
-<!-- scroll -->
+    <!-- scroll -->
 
-<div id="div1"><h1 id="h1a">Scroll down</h1></div>
-<div id="div2">
-<h1 id="h1b">"Slide from left"</h1>
-<hr > 
-<img src="1.jpg" alt="" style="width: 300px; height: 200px;"> 
-</div>
-<div id="div3"><h1 id="h1c">Scroll up</h1></div>
-
-<!-- taskList -->
-
-<div id="task">
-    <div id="task1">
-        <div id="text-task1">Список завдання</div>
-
+    <div id="div1">
+        <h1 id="h1a">Scroll down</h1>
     </div>
-    <div id="task2">
-        
-        <div id="text-task2">Додати нове завдання</div>
+    <div id="div2">
+        <h1 id="h1b">"Slide from left"</h1>
+        <hr>
+        <img src="1.jpg" alt="" style="width: 300px; height: 200px;">
+    </div>
+    <div id="div3">
+        <h1 id="h1c">Scroll up</h1>
+    </div>
 
-        <input id="textInput" type="text" >
-        <hr id="lineInput" >
-        <input id="btn" type="button" value="Додати" style="display: block; margin: 0 auto;">
+    <!-- taskList -->
 
-        <div id="warning">
-            <h3>ПОПЕРЕДЖЕННЯ!!!</h3>
-            <div id="message" >Пусте поле не можна добавити!</div>
-            <button id="x" onclick="warning()">x</button>
+    <div id="task">
+        <div id="task1">
+            <div id="text-task1">Список завдання</div>
+
         </div>
-        
+        <div id="task2">
+
+            <div id="text-task2">Додати нове завдання</div>
+
+            <input id="textInput" type="text" onclick="warning()">
+            <hr id="lineInput">
+            <input id="btn" type="button" value="Додати" style="display: block; margin: 0 auto;">
+
+            <div id="warning">
+                <h3>ПОПЕРЕДЖЕННЯ!!!</h3>
+                Пусте поле не можна добавити!
+                <button id="x" onclick="warning()">x</button>
+            </div>
+
+            <div id="warning1">
+                <h3>ПОПЕРЕДЖЕННЯ!!!</h3>
+                Останній текст зі списку ви не можете видалити!
+                <button id="x1" onclick="warning()">x</button>
+            </div>
+
+            <div id="warning2">
+                <h3>ПОПЕРЕДЖЕННЯ!!!</h3>
+                Планувати можна тільки на сім днів!
+                <button id="x2" onclick="warning()">x</button>
+            </div>
+
+        </div>
     </div>
-</div>
-     
+
     <script src="script.js"></script>
 </body>
 

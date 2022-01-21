@@ -77,7 +77,7 @@ function creatNote() {
 
   node1.setAttribute(
     "style",
-    "appearance:none; width:15px; height:15px; background:lightslategray; border-radius:3px;"
+    "appearance:none; width:15px; height:15px; background:lightgray; border-radius:3px;"
   );
   node1.setAttribute("type", "checkbox");
 

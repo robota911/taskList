@@ -44,7 +44,7 @@ d.addEventListener('mouseover',function (){
 
 
 
-
+let taskCount = 0;
 let container2 = document.getElementById('task1');
 let button = document.getElementById('btn');
 
@@ -53,7 +53,12 @@ button.addEventListener('click', function () {
   if (!noteText) {
     document.getElementById('warning').style.display = "block"
   }
- else creatNote()
+
+  if(taskCount >= 2) {
+    console.log('stop')
+    return
+  }
+  creatNote()
 })
 
 function warning() {
@@ -67,7 +72,7 @@ function creatNote() {
 
   let node1 = document.createElement('input');
   let node2 = document.createElement('p');
-
+  taskCount += 1;
   node2.innerHTML = noteText;
 
   // node1.innerHTML = noteText;
@@ -82,8 +87,20 @@ function creatNote() {
   container2.insertAdjacentElement('beforeend', node0);
 
   node0.addEventListener('click', function () {
+    const task1 = document.getElementById('task1');
+    if (task1.childElementCount === 2) {
+      // alert('hello')
+      document.getElementById('warning').style.display = "block"
+      document.getElementById('message').innerText = 'Hello'
+      return
+    } else {
+      task1.childElementCount
+    // console.log('task1', task1)
+    // console.log('task1.childElementCount', task1.childElementCount)
     node0.remove();
-    console.log(node0)
+    taskCount -= 1;
+    console.log('node0', node0)
+    }
   })
   
   document.getElementById('textInput').value = '';
@@ -91,4 +108,4 @@ function creatNote() {
 
 
 let w = document.getElementsByTagName('div')
-   console.log(w)
+  //  console.log(w)

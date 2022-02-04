@@ -1,139 +1,193 @@
-/* scroll */
-
-* {
-  box-sizing: border-box;
+*{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-#div2 {
-  padding-top: 60px;
-  width: 100%;
-  height: 600px;
-  background: cornsilk;
+body{
+  background: lightsteelblue;
 }
-#div1,
-#div3 {
-  width: 100%;
-  height: 300px;
-  background: lightblue;
-  text-align: center;
-  padding-top: 130px;
-}
-img {
-  position: absolute;
-  right: 0;
-}
-hr {
-  border: solid 2px red;
-  width: 230px;
-}
-#h1a:hover {
-  color: red;
-  cursor: pointer;
-  transition: 1s;
-}
-#h1c {
-  width: 170px;
+.container{
+  width: 787px;
   margin: 0 auto;
 }
-#h1c:hover {
-  color: red;
-  cursor: pointer;
-  transition: 1s;
-}
 
-/* taskList */
-
-#task {
-  width: 850px;
-  height: 600px;
-  border: solid seashell 2px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
-  border-radius: 10px;
-  margin: 30px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: space-around;
-  background: black;
-}
-#task1,
-#task2 {
-  width: 400px;
-  height: 560px;
-  border: black solid 2px;
-  margin: 5px;
-  background: white;
-  padding-top: 30px;
-}
-#task1 {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  padding-left: 30px;
-}
-#task2 {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  text-align: center;
-}
-
-#text-task1,
-#text-task2 {
-  margin-bottom: 15px;
-  color: red;
-}
-
-#textInput {
-  border: none;
-  outline: none;
-}
-#lineInput {
-  width: 173px;
-  margin-left: 112px;
-  border: black solid 1px;
-  margin-bottom: 20px;
-}
-#btn {
-  color: white;
-  background: black;
-  margin-top: 10px;
-  width: 70px;
-  height: 30px;
-  border-radius: 4px;
-}
-#warning,
-#warning1,
-#warning2 {
-  width: 600px;
-  height: 50px;
-  border-radius: 6px;
-  border: red 1px solid;
-  padding-top: 1px;
-  text-align: center;
+.block{
+  height: 100%;
+  border-radius: 5px;
+  background-color: lightgray;
+  margin: 20px 0;
+  padding: 20px;
   position: relative;
-  top: 50px;
-  right: 300px;
-  background: pink;
-  color: palevioletred;
+}
+
+.edit-block, .style-block {
   display: none;
 }
-#x,
-#x1,
-#x2 {
+
+h4, h2 {
+  margin: 10px 0px;
+}
+
+#fontFamily{
+  width: 260px;
+}
+
+.edit-area {
+  width: 100%;
+  height: 200px;
+  resize: none;
+}
+
+.colors, .colors1{
+  width: 150px;
+  height: 150px;
+  outline: 1px solid black;
+  position: absolute;
+  top: 60px;
+  right: 150px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.color-box, .color-box1{
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+.bold{
+  font-weight: bold;
+}
+.cursive{
+  font-style: italic;
+}
+
+.first, .second{
+  display: none;
+}
+
+
+.hide{
+  display: none;
+}
+
+/* список */
+.create-list{
+  display: none;
+  width: 100%;
+    height: 150px;
+}
+.countLi{
   position: relative;
-  top: -11px;
-  left: 170px;
+  top: 25px;
+  
+}
+.count-li-input{
+  position: relative;
+  width: 75%;
+  height: 25px;
+  margin: 0px 0px 20px 110px;
+}
+.typeOF-input{
+  position: relative;
+  left: 90px;
+    bottom: 25px;
+    width: 75%;
+    height: 25px;
+    margin-left: 20px;
+}
+/* тфблиці */
+.table-list{
+  width: 100%;
+  background: lightgray;
+  display: none;
+}
+
+.form-table, .form-table-add,
+.form-table-style{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.form-table-style{
+  margin: 12px 0px 12px 0px;
+}
+
+.countTr-table, .typeTd-table, .countAdd,
+.typeAdd{
+  display: inline;
+  margin: 10px 0px;
+}
+.count-tr-input, .typeTd-td-input,
+.count-add-input, .type-add-input{
+  width: 81%;
+  display: inline;
+  margin: 5px 0px;
+  padding-left: 10px;
+}
+.count-Width, .count-Type, .count-Color{
+  display: inline;
+  margin: 0px 30px 0px 15px;
+}
+.count-Width{
+  margin: 5px 6px 0px 0px;
+}
+/* .count-Width-border, .count-Type-border,
+.count-Color-border{
+
+} */
+.count-Width-border{
+  width: 70px;
+  padding-left: 10px;
+}
+
+.show {
+  display: block;
+}
+
+
+
+/* butons starts */
+.center-block{
+  display: flex;
+  justify-content: center;
+}
+.btn-edit, .btn-style, .btn-add, 
+.btn-save, .btn-create-list,
+.btn-create-list2{
+  width: 70px;
+  height: 40px;
+  margin: 0px 5px;
+  border-radius: 4px;
   border: none;
-  background: pink;
-  color: palevioletred;
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-  cursor: pointer;
+  color: white;
 }
-#x1 {
-  left: 100px;
+
+.btn-text-color, .btn-bg-color{
+  color: white;
+  background: grey;
+  border-radius: 3px;
+  border: grey 1px solid;
+  width: 129px;
+    height: 25px;
 }
-#x2 {
-  left: 135px;
+
+.btn-edit{
+  background: darkorange;
 }
+.btn-style{
+  background: darkblue;
+}
+.btn-add{
+  background: darkred;
+}
+.btn-save, .btn-create-list,
+.btn-create-list2{
+  background: darkolivegreen;
+}
+.btn-create-list,
+.btn-create-list2{
+  display: block;
+  margin: 0px;
+}
+
+/* buttons ends */

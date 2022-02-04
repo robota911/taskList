@@ -1,107 +1,167 @@
-// scroll
+const getS = (selector) => document.querySelector(selector);
 
-window.addEventListener("scroll", function () {
-  document.querySelector("hr").style.width = `${230 + window.scrollY / 2}px`;
-  document.querySelector("img").style.right = `${window.scrollY / 2}px`;
-  document.querySelector("#h1a").style.fontSize = `${
-    32 + window.scrollY / 15
-  }px`;
-  document.querySelector("#h1c").style.fontSize = `${
-    70.4 - window.scrollY / 15
-  }px`;
+getS(".btn-edit").addEventListener("click", function () {
+  getS(".edit-block").classList.add("show");
+  getS(".style-block").classList.remove("show");
+  // const content = getS('.top-block').innerHTML;
+  // getS('.edit-area').value = content;
+  getS(".edit-area").value = getS(".top-block").innerHTML;
 });
 
-window.addEventListener("scroll", function () {
-  if (window.scrollY > 570) {
-    document.querySelector("#h1c").style.fontSize = "32px";
-  }
+getS(".btn-save").addEventListener("click", function () {
+  getS(".edit-block").classList.remove("show");
+  getS(".top-block").innerHTML = getS(".edit-area").value;
 });
 
-let a = document.getElementById("h1a");
-let d = document.getElementById("h1c");
-
-a.addEventListener("click", function () {
-  a.style.fontSize = "100px";
-  let h = document.querySelector("hr");
-  console.log(h);
-
-  window.scroll({
-    top: 300,
-    behavior: "smooth",
-  });
+getS(".btn-style").addEventListener("click", function () {
+  getS(".style-block").classList.add("show");
+  getS(".edit-block").classList.remove("show");
 });
 
-d.addEventListener("click", function () {
-  window.scroll({
-    top: 0,
-    behavior: "smooth",
-  });
-});
-
-d.addEventListener("mouseover", function () {
-  document.getElementById("h1c");
-});
-
-// taskList
-
-let taskCount = 0;
-let container2 = document.getElementById("task1");
-let button = document.getElementById("btn");
-
-button.addEventListener("click", function () {
-  let noteText = document.getElementById("textInput").value;
-  if (!noteText) {
-    document.getElementById("warning").style.display = "block";
-    return;
-  } else if (taskCount >= 7) {
-    console.log("stop");
-    document.getElementById("warning2").style.display = "block";
-    return;
-  }
-  creatNote();
-});
-
-function warning() {
-  document.getElementById("warning").style.display = "none";
-  document.getElementById("warning1").style.display = "none";
-  document.getElementById("warning2").style.display = "none";
+function fontSize() {
+  // console.log(event.target.value);
+  getS(".top-block").style.fontSize = event.target.value;
 }
 
-function creatNote() {
-  let noteText = document.getElementById("textInput").value;
-  let node0 = document.createElement("div");
-  let node1 = document.createElement("input");
-  let node2 = document.createElement("p");
+let fF = document.getElementById("fontFamily");
+fF.addEventListener("change", function () {
+  // console.log(e.target.value);
+  // console.log(this.value);
+  getS(".top-block").style.fontFamily = this.value;
+});
 
-  node2.innerHTML = noteText;
 
-  node1.setAttribute(
-    "style",
-    "appearance:none; width:15px; height:15px; background:lightgray; border-radius:3px;"
-  );
-  node1.setAttribute("type", "checkbox");
 
-  node2.setAttribute(
-    "style",
-    "display:inline; margin-left:5px; font-size: 26px "
-  );
 
-  node0.appendChild(node1);
-  node0.appendChild(node2);
+let colors = [
+  "red",
+  "green",
+  "blue",
+  "yellow",
+  "pink",
+  "gray",
+  "black",
+  "white",
+  "deeppink",
+];
+for (let i = 0; i < getS(".colors").children.length; i++) {
+  getS(".colors").children[i].style.backgroundColor = colors[i];
 
-  container2.insertAdjacentElement("beforeend", node0);
+  getS(".colors").children[i].addEventListener("click", function () {
+    getS(".top-block").style.color = this.style.backgroundColor;
+    getS(".colors").classList.add("hide");
+  });
+}
 
-  node0.addEventListener("click", function () {
-    const task1 = document.getElementById("task1");
+getS(".btn-text-color").addEventListener("click", function () {
+  getS(".colors").classList.remove("hide");  
+});
 
-    if (task1.childElementCount === 2) {
-      document.getElementById("warning1").style.display = "block";
-      return;
+let colors1 = [
+    "red",
+    "green",
+    "blue",
+    "yellow",
+    "pink",
+    "gray",
+    "black",
+    "white",
+    "deeppink",
+  ];
+  for (let i = 0; i < getS(".colors1").children.length; i++) {
+    getS(".colors1").children[i].style.backgroundColor = colors1[i];
+  
+    getS(".colors1").children[i].addEventListener("click", function () {
+      getS(".top-block").style.background = this.style.backgroundColor;
+      getS(".colors1").classList.add("hide");
+    });
+  }
+getS(".btn-bg-color").addEventListener("click", function () {
+    getS(".colors1").classList.remove("hide");  
+  });
+
+/* start function bold style */
+
+
+
+function fontWeight() {
+//   console.log(event.target.checked);
+  if (event.target.checked) {
+    getS(".top-block").classList.add("bold");
+  } else {
+    getS(".top-block").classList.remove("bold");
+  }
+}
+
+function fontWeight1() {
+    // console.log(event.target.checked);
+    if (event.target.checked) {
+      getS(".top-block").classList.add("cursive");
     } else {
-      node0.remove();
-      taskCount -= 1;
+      getS(".top-block").classList.remove("cursive");
     }
-  });
-  taskCount += 1;
-  document.getElementById("textInput").value = "";
+  }
+
+/* end function bold style */
+
+getS(".btn-add").addEventListener("click", function () {
+  getS(".first").classList.remove("show");
+  getS(".second").classList.add("show");
+});
+
+getS(".btn-create-list").addEventListener("click", function () {
+  
+  const list = document.forms["form-list"];
+  const countLi = list.count.value;
+  const typeLi = list.type.value;
+  getS(".edit-area").value += `<ul style="list-style-type: ${typeLi}">`;
+  for (let i = 0; i < countLi; i++) {
+    getS(".edit-area").value += `<li>item ${i + 1}</li>`;
+  }
+  getS(".edit-area").value += "</ul>";
+
+  getS(".first").classList.add("show");
+  getS(".second").classList.remove("show");
+});
+
+getS(".block-list").addEventListener("click", function () {
+  getS(".create-list").classList.add("show");
+  getS(".table-list").classList.remove("show");
+});
+
+getS(".block-table").addEventListener("click", function () {
+  getS(".table-list").classList.add("show");
+  getS(".create-list").classList.remove("show");
+});
+
+function tableBtn() {
+  const formTable = document.forms["form-table"];
+  const createTableTR = formTable.countTR.value;
+  const createTableTD = formTable.countTd.value;
+
+  const borderStyle = document.forms["form-table-style"];
+  const borderWidth = borderStyle.type1.value;
+  const borderType = borderStyle.type2.value;
+  const borderColor = borderStyle.type3.value;
+
+  const width = getS(".count-add-input").value;
+  const height = getS(".type-add-input").value;
+
+  getS(
+    ".edit-area"
+  ).value += `<table border="0" cellspacing="0" style=" border: ${borderWidth}px ${borderType} ${borderColor}">`;
+  for (let i = 0; i < createTableTR; i++) {
+    getS(".edit-area").value += `<tr>`;
+    for (let i = 0; i < createTableTD; i++) {
+      getS(
+        ".edit-area"
+      ).value += `<td style="height:${height}px; width:${width}px; border: ${borderWidth}px ${borderType} ${borderColor}"> td </td>`;
+    }
+  }
+  getS(".edit-area").value += "</table>";
 }
+getS(".btn-create-list2").addEventListener("click", function () {
+  tableBtn();
+  getS(".first").classList.add("show");
+  getS(".second").classList.remove("show");
+});

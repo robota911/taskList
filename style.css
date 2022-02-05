@@ -1,17 +1,18 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+
+body {
   background: lightsteelblue;
 }
-.container{
+.container {
   width: 787px;
   margin: 0 auto;
 }
 
-.block{
+.block {
   height: 100%;
   border-radius: 5px;
   background-color: lightgray;
@@ -19,16 +20,17 @@ body{
   padding: 20px;
   position: relative;
 }
-
-.edit-block, .style-block {
+.edit-block,
+.style-block {
   display: none;
 }
 
-h4, h2 {
+h4,
+h2 {
   margin: 10px 0px;
 }
 
-#fontFamily{
+#fontFamily {
   width: 260px;
 }
 
@@ -38,7 +40,8 @@ h4, h2 {
   resize: none;
 }
 
-.colors, .colors1{
+.colors,
+.colors1 {
   width: 150px;
   height: 150px;
   outline: 1px solid black;
@@ -48,94 +51,93 @@ h4, h2 {
   display: flex;
   flex-wrap: wrap;
 }
-.color-box, .color-box1{
+.color-box,
+.color-box1 {
   width: 50px;
   height: 50px;
   border: 1px solid black;
 }
 
-.bold{
+.bold {
   font-weight: bold;
 }
-.cursive{
+.cursive {
   font-style: italic;
 }
 
-.first, .second{
+.first,
+.second {
+  display: none;
+}
+.hide {
   display: none;
 }
 
-
-.hide{
-  display: none;
-}
-
-/* список */
-.create-list{
+.create-list {
   display: none;
   width: 100%;
-    height: 150px;
+  height: 150px;
 }
-.countLi{
+.countLi {
   position: relative;
   top: 25px;
-  
 }
-.count-li-input{
+.count-li-input {
   position: relative;
   width: 75%;
   height: 25px;
   margin: 0px 0px 20px 110px;
 }
-.typeOF-input{
+.typeOF-input {
   position: relative;
   left: 90px;
-    bottom: 25px;
-    width: 75%;
-    height: 25px;
-    margin-left: 20px;
+  bottom: 25px;
+  width: 75%;
+  height: 25px;
+  margin-left: 20px;
 }
-/* тфблиці */
-.table-list{
+
+.table-list {
   width: 100%;
   background: lightgray;
   display: none;
 }
-
-.form-table, .form-table-add,
-.form-table-style{
+.form-table,
+.form-table-add,
+.form-table-style {
   display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.form-table-style{
+.form-table-style {
   margin: 12px 0px 12px 0px;
 }
-
-.countTr-table, .typeTd-table, .countAdd,
-.typeAdd{
+.countTr-table,
+.typeTd-table,
+.countAdd,
+.typeAdd {
   display: inline;
   margin: 10px 0px;
 }
-.count-tr-input, .typeTd-td-input,
-.count-add-input, .type-add-input{
+.count-tr-input,
+.typeTd-td-input,
+.count-add-input,
+.type-add-input {
   width: 81%;
   display: inline;
   margin: 5px 0px;
   padding-left: 10px;
 }
-.count-Width, .count-Type, .count-Color{
+.count-Width,
+.count-Type,
+.count-Color {
   display: inline;
   margin: 0px 30px 0px 15px;
 }
-.count-Width{
+.count-Width {
   margin: 5px 6px 0px 0px;
 }
-/* .count-Width-border, .count-Type-border,
-.count-Color-border{
-
-} */
-.count-Width-border{
+.count-Width-border {
   width: 70px;
   padding-left: 10px;
 }
@@ -144,16 +146,16 @@ h4, h2 {
   display: block;
 }
 
-
-
-/* butons starts */
-.center-block{
+.center-block {
   display: flex;
   justify-content: center;
 }
-.btn-edit, .btn-style, .btn-add, 
-.btn-save, .btn-create-list,
-.btn-create-list2{
+.btn-edit,
+.btn-style,
+.btn-add,
+.btn-save,
+.btn-create-list,
+.btn-create-list2 {
   width: 70px;
   height: 40px;
   margin: 0px 5px;
@@ -161,33 +163,31 @@ h4, h2 {
   border: none;
   color: white;
 }
-
-.btn-text-color, .btn-bg-color{
+.btn-text-color,
+.btn-bg-color {
   color: white;
   background: grey;
   border-radius: 3px;
   border: grey 1px solid;
   width: 129px;
-    height: 25px;
+  height: 25px;
 }
-
-.btn-edit{
+.btn-edit {
   background: darkorange;
 }
-.btn-style{
+.btn-style {
   background: darkblue;
 }
-.btn-add{
+.btn-add {
   background: darkred;
 }
-.btn-save, .btn-create-list,
-.btn-create-list2{
+.btn-save,
+.btn-create-list,
+.btn-create-list2 {
   background: darkolivegreen;
 }
 .btn-create-list,
-.btn-create-list2{
+.btn-create-list2 {
   display: block;
   margin: 0px;
 }
-
-/* buttons ends */

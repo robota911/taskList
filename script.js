@@ -3,8 +3,6 @@ const getS = (selector) => document.querySelector(selector);
 getS(".btn-edit").addEventListener("click", function () {
   getS(".edit-block").classList.add("show");
   getS(".style-block").classList.remove("show");
-  // const content = getS('.top-block').innerHTML;
-  // getS('.edit-area').value = content;
   getS(".edit-area").value = getS(".top-block").innerHTML;
 });
 
@@ -19,19 +17,13 @@ getS(".btn-style").addEventListener("click", function () {
 });
 
 function fontSize() {
-  // console.log(event.target.value);
   getS(".top-block").style.fontSize = event.target.value;
 }
 
 let fF = document.getElementById("fontFamily");
 fF.addEventListener("change", function () {
-  // console.log(e.target.value);
-  // console.log(this.value);
   getS(".top-block").style.fontFamily = this.value;
 });
-
-
-
 
 let colors = [
   "red",
@@ -54,38 +46,33 @@ for (let i = 0; i < getS(".colors").children.length; i++) {
 }
 
 getS(".btn-text-color").addEventListener("click", function () {
-  getS(".colors").classList.remove("hide");  
+  getS(".colors").classList.remove("hide");
 });
 
 let colors1 = [
-    "red",
-    "green",
-    "blue",
-    "yellow",
-    "pink",
-    "gray",
-    "black",
-    "white",
-    "deeppink",
-  ];
-  for (let i = 0; i < getS(".colors1").children.length; i++) {
-    getS(".colors1").children[i].style.backgroundColor = colors1[i];
-  
-    getS(".colors1").children[i].addEventListener("click", function () {
-      getS(".top-block").style.background = this.style.backgroundColor;
-      getS(".colors1").classList.add("hide");
-    });
-  }
-getS(".btn-bg-color").addEventListener("click", function () {
-    getS(".colors1").classList.remove("hide");  
+  "red",
+  "green",
+  "blue",
+  "yellow",
+  "pink",
+  "gray",
+  "black",
+  "white",
+  "deeppink",
+];
+for (let i = 0; i < getS(".colors1").children.length; i++) {
+  getS(".colors1").children[i].style.backgroundColor = colors1[i];
+
+  getS(".colors1").children[i].addEventListener("click", function () {
+    getS(".top-block").style.background = this.style.backgroundColor;
+    getS(".colors1").classList.add("hide");
   });
-
-/* start function bold style */
-
-
+}
+getS(".btn-bg-color").addEventListener("click", function () {
+  getS(".colors1").classList.remove("hide");
+});
 
 function fontWeight() {
-//   console.log(event.target.checked);
   if (event.target.checked) {
     getS(".top-block").classList.add("bold");
   } else {
@@ -94,15 +81,12 @@ function fontWeight() {
 }
 
 function fontWeight1() {
-    // console.log(event.target.checked);
-    if (event.target.checked) {
-      getS(".top-block").classList.add("cursive");
-    } else {
-      getS(".top-block").classList.remove("cursive");
-    }
+  if (event.target.checked) {
+    getS(".top-block").classList.add("cursive");
+  } else {
+    getS(".top-block").classList.remove("cursive");
   }
-
-/* end function bold style */
+}
 
 getS(".btn-add").addEventListener("click", function () {
   getS(".first").classList.remove("show");
@@ -110,7 +94,6 @@ getS(".btn-add").addEventListener("click", function () {
 });
 
 getS(".btn-create-list").addEventListener("click", function () {
-  
   const list = document.forms["form-list"];
   const countLi = list.count.value;
   const typeLi = list.type.value;

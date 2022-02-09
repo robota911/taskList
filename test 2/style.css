@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'digital-7';
+  src: url('../fonts/digital-7.ttf'); 
+  } 
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: black;
+}
+
+.time, .stopwatch, .timer{
+  width: 90%;
+  height: 200px;
+  margin: 10px auto;
+  background: rgb(16, 1, 71);
+  border: 4px solid silver;
+  color: rgb(87, 166, 240);
+  display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.time-date{
+  font-family: 'digital-7';
+  font-size: 30px;
+}
+.time-time{
+  font-family: 'digital-7';
+  font-size: 100px;
+}
+
+/* ///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////// */
+
+.stopwatch{
+  font-family: 'digital-7';
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.stopwatch-timer{
+  width: 340px;
+  height: 150px;
+  /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.stopwatch-timer-display{
+  font-size: 80px;
+  margin-top: -10px;
+}
+.stopwatch-button{
+  margin-top: 45px;
+}
+button{
+  width: 81px;
+  height: 30px;
+  border: solid 2px grey;
+  border-radius: 6px;
+  background: rgb(16, 1, 71);
+  color: gray;
+  cursor: pointer;
+}
+.stopwatch-screen{
+  width: 250px;
+  height: 150px;
+  font-size: 50px;
+  background: rgb(16, 1, 71);
+  text-align: center;
+  border: solid 2px rgb(87, 166, 240);
+  border-radius: 4px;
+}
+
+.show{
+  border: solid 2px rgb(87, 166, 240);
+  color: rgb(87, 166, 240);
+  box-shadow: 0px 0px 4px 2px;
+}
+
+/* //////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */
+
+
+.timer{
+  font-family: 'digital-7';
+
+  flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+.timer-watch, .timer-display{
+  width: 250px;
+  height: 150px;
+  border: solid 2px silver;
+  display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+}
+
+.timer-display{
+  width: 300px;
+  height: 150px;
+  border: solid 2px silver;
+}

@@ -34,7 +34,6 @@ let milliseconds = 0;
 let timer;
 
 const startWatch = () => {
-  watch.classList.remove("paused");
   clearInterval(timer);
   timer = setInterval(() => {
     milliseconds += 10;
@@ -51,12 +50,10 @@ const startWatch = () => {
 };
 
 const pausedWatch = () => {
-  watch.classList.add("paused");
   clearInterval(timer);
 };
 
 const resetWatch = () => {
-  watch.classList.remove("paused");
   clearInterval(timer);
   milliseconds = 0;
   watch.innerHTML = "00:00:00:00";
@@ -86,7 +83,6 @@ document.querySelector("#loop").addEventListener("click", function () {
   screen.append(p);
 
   if (screen.childElementCount >= 4) {
-    console.log("stop");
     p.textContent = "";
     return;
   }
@@ -110,69 +106,105 @@ document.querySelector("#reset").addEventListener("click", function () {
 /////////////////////////////////////////////////////////////////////
 
 let plus = document.querySelector(".timer-watch-text");
-// console.log(plus)
 let count = 1;
 document.getElementById("plus").addEventListener("click", function () {
   if (count >= 1) {
-    plus.textContent = count++ ;
-    console.log(plus)
+    plus.textContent = count++;
+
+    if (count < 11) {
+      plus.textContent = `0${count - 1}`;
+    }
+
+    let timeTimer = plus.textContent * 60;
+
+    const startWatchT = () => {
+      clearInterval(timerID);
+
+      function updateCountDown() {
+        let minutes = Math.floor(timeTimer / 60);
+        let seconds = timeTimer % 60;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        watchT.innerHTML = `${minutes}:${seconds}`;
+        timeTimer--;
+      }
+
+      timerID = setInterval(updateCountDown, 1000);
+
+      document.getElementById("timer-start").classList.add("show");
+      document.getElementById("timer-stop").classList.remove("show");
+      document.getElementById("plus").classList.remove("show");
+      document.getElementById("minus").classList.remove("show");
+    };
+
+    document
+      .querySelector("#timer-start")
+      .addEventListener("click", function () {
+        startWatchT();
+      });
 
     document.getElementById("plus").classList.add("show");
     document.getElementById("minus").classList.remove("show");
+    document.querySelector("#minus").removeAttribute("disabled", "disabled");
 
     if (count == 26) {
       document.querySelector("#plus").setAttribute("disabled", "disabled");
       document.getElementById("plus").classList.remove("show");
-    }    
+    }
   }
 });
 
 document.getElementById("minus").addEventListener("click", function () {
   if (count >= 1) {
     plus.textContent = count-- - 2;
-    console.log(plus.textContent)
+
+    if (count < 11) {
+      plus.textContent = `0${count - 1}`;
+    }
+
+    let timeTimer = plus.textContent * 60;
+
+    const startWatchT = () => {
+      clearInterval(timerID);
+
+      function updateCountDown() {
+        let minutes = Math.floor(timeTimer / 60);
+        let seconds = timeTimer % 60;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        watchT.innerHTML = `${minutes}:${seconds}`;
+        timeTimer--;
+      }
+
+      timerID = setInterval(updateCountDown, 1000);
+
+      document.getElementById("timer-start").classList.add("show");
+      document.getElementById("timer-stop").classList.remove("show");
+      document.getElementById("plus").classList.remove("show");
+      document.getElementById("minus").classList.remove("show");
+    };
+
+    document
+      .querySelector("#timer-start")
+      .addEventListener("click", function () {
+        startWatchT();
+      });
 
     document.getElementById("minus").classList.add("show");
     document.getElementById("plus").classList.remove("show");
 
-    if (count == 0) {
-      plus.textContent = count++;
+    if (count == 1) {
+      plus.textContent = "00";
       document.getElementById("minus").classList.remove("show");
+      document.querySelector("#minus").setAttribute("disabled", "disabled");
     }
   }
   document.querySelector("#plus").removeAttribute("disabled", "disabled");
 });
 
-// це ще код таймера
-
-
-console.log(document.querySelector('.timer-display').children)
-
-const watchT = document.querySelector(".timer-display-text");
-
-let timeTimer = 1500;
-
+let watchT = document.querySelector(".timer-display-text");
 let timerID;
-
-const startWatchT = () => {
-
-  clearInterval(timerID);
-
-  function updateCountDown() {
-    const minutes = Math.floor(timeTimer / 60);
-    let seconds = timeTimer % 60;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-    watchT.innerHTML = `${minutes} : ${seconds}`;
-    timeTimer--;
-  }
-
-  timerID = setInterval(updateCountDown, 1000);
-
-  document.getElementById("timer-start").classList.add("show");
-  document.getElementById("timer-stop").classList.remove("show");
-  document.getElementById("plus").classList.remove("show");
-  document.getElementById("minus").classList.remove("show");
-};
 
 const pausedWatchT = () => {
   clearInterval(timerID);
@@ -182,7 +214,6 @@ const pausedWatchT = () => {
 
 const resetWatchT = () => {
   clearInterval(timerID);
-  timeTimer = 600
   watchT.innerHTML = "00:00";
   document.getElementById("timer-reset").classList.add("show");
   document.getElementById("timer-start").classList.remove("show");
@@ -195,9 +226,7 @@ const resetWatchT = () => {
 
 document.addEventListener("click", (e) => {
   const element = e.target;
-  if (element.id === "timer-start") {
-    startWatchT();
-  }
+
   if (element.id === "timer-stop") {
     pausedWatchT();
   }

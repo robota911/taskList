@@ -1,0 +1,37 @@
+<div class="users-data">
+    <div class="users-data-name">
+        <div class="users-data-name-inform1">#</div>
+        <div class="users-data-name-inform">Task</div>
+        <div class="users-data-name-inform">check</div>
+        <div class="users-data-name-inform4">Done/In progres</div>
+        <div class="users-data-name-inform">edit</div>
+        <div class="users-data-name-inform">delete</div>
+    </div>
+
+    <div class="user" *ngFor="let item  of result; index as i">
+        <div class="user-inform1">{{i+1}}</div>
+        <div class="user-inform">{{item.login}}</div>
+        <div class="user-inform"> <input #saveUserNameCheckBox [checked]="saveUsername" type="checkbox"
+                (change)="checkBox(saveUserNameCheckBox.checked)">
+        </div>
+        <div class="user-inform4">
+            <p class="In-progress" *ngIf="!saveUsername">In progress</p>
+            <p class="done" *ngIf="saveUsername">done</p>
+        </div>
+        <div class="user-inform">
+            <button class="button-edit" (click)="editUser(i)">
+                edit
+            </button>
+        </div>
+        <div class="user-inform">
+            <button class="button-delit" (click)="deliteUser(i)" [disabled]="!saveUsername">
+                delit
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="save">
+    <input class="input-save" type="text" *ngIf="editStatus" [(ngModel)]="save">
+    <button class="button-save" *ngIf="editStatus" (click)="saveUser()">save</button>
+</div>

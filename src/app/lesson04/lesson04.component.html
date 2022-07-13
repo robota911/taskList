@@ -1,4 +1,3 @@
-
 <div *ngIf="blackSkrin" class="i" (click)="closePopap()"></div>
 
 <div class="angular">
@@ -6,17 +5,15 @@
 </div>
 
 <div class="search">
-    <input class="search-input" type="text">
-     <button class="search-btn" (click)="addPhone()"> появись </button>
+    <input class="search-input" type="text" [(ngModel)]="search">
+    <button class="search-btn" (click)="addPhone()"> Add phone </button>
 </div>
 
 <div class="container">
 
-
-
     <div class="popap" *ngIf="popap">
         <div class="popap-boxOne">
-            <p > Add phone </p>
+            <p> Add phone </p>
             <button class="popap-btnClose" (click)="closePopap()">x</button>
         </div>
         <div class="popap-boxTwo">
@@ -24,46 +21,56 @@
             <input class="user-text" type="text" [(ngModel)]="FirstName">
 
             <p> Last name </p>
-            <input class="user-text" type="text" [(ngModel)]="lastName" >
+            <input class="user-text" type="text" [(ngModel)]="lastName">
 
             <p> Number </p>
-            <input class="user-text" type="text" [(ngModel)]="number" >
+            <input class="user-text" type="text" [(ngModel)]="number">
         </div>
         <div class="popap-boxThree">
 
             <button class="button-add" *ngIf="!editStatus" (click)="addUser()"
-             [disabled]="!FirstName || this.result.length === 6 ">
-             Add phone
-            </button> 
+                [disabled]="!FirstName || this.result.length === 6 ">
+                Add phone
+            </button>
 
             <button class="button-save" *ngIf="editStatus" (click)="saveUser()"> save </button>
         </div>
 
-    
-
-</div>    
+    </div>
 
     <div class="users-data">
         <div class="users-data-name">
             <div class="users-data-name-inform1"> # </div>
-            <div class="users-data-name-inform"> First name </div>
-            <div class="users-data-name-inform"> Last name </div>
-            <div class="users-data-name-inform4"> Number </div>
-            <div class="users-data-name-inform"> edit </div>
-            <div class="users-data-name-inform"> delete </div> 
-        </div>
-        
+            <div class="users-data-name-inform">
+                <p class="up" (click)="up()">First name</p>
+                <button (click)="changeSort('ask')" *ngIf="appear">a-z</button>
+                <button (click)="changeSort('desk')" *ngIf="appear">z-a</button>
 
-        <div class="user" *ngFor="let item  of result; index as i">
+            </div>
+            <div class="users-data-name-inform">
+                <p class="up" (click)="up1()">Last name</p>
+                <button (click)="changeSort('ask')" *ngIf="appear1">a-z</button>
+                <button (click)="changeSort('desk')" *ngIf="appear1">z-a</button>
+            </div>
+            <div class="users-data-name-inform4">
+                <p class="up" (click)="up2()">Number</p>
+                <button (click)="changeSort('ask')" *ngIf="appear2">0-9</button>
+                <button (click)="changeSort('desk')" *ngIf="appear2">9-0</button>
+            </div>
+            <div class="users-data-name-inform"> edit </div>
+            <div class="users-data-name-inform"> delete </div>
+        </div>
+
+
+        <div class="user" *ngFor="let item  of result | search:search | sort:type; index as i">
             <div class="user-inform1">{{i+1}}</div>
             <div class="user-inform">{{item.FirstNames}}</div>
             <div class="user-inform">{{item.lastNames}}</div>
             <div class="user-inform4">{{item.numbers}}</div>
-            <div class="user-inform"><button class="bottom-edit" (click)="editUser(i)"> edit </button></div>  
-            <div class="user-inform"><button class="bottom-delit" (click)="deliteUser(i)" > delit </button></div>           
-       </div> 
+            <div class="user-inform"><button class="bottom-edit" (click)="editUser(i)"> edit </button></div>
+            <div class="user-inform"><button class="bottom-delit" (click)="deliteUser(i)"> delit </button></div>
+        </div>
 
     </div>
-        
-</div>
 
+</div>

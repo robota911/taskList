@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './user.interface';
+// import { SearchPipe } from "./search.pipe";
 
 @Component({
   selector: 'app-lesson04',
@@ -9,18 +10,43 @@ import { User } from './user.interface';
 
 export class Lesson04Component implements OnInit {
 
-public FirstName!: string ;
-public lastName!: string ;
-public number!: string ;
-public result:User[] = [];
-public editStatus = false;
-public editIndex!: number;
-popap = false
-blackSkrin = false
+  FirstName!: string;
+  lastName!: string;
+  number!: string;
+  result: User[] = [];
+  editStatus = false;
+  editIndex!: number;
+  popap = false
+  blackSkrin = false
+  search = ''
+  type = 'ask'
+  type1 = 'desk'
+  appear = false
+  appear1 = false
+  appear2 = false
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  up(): void {
+    this.appear = true
+  }
+
+  up1(): void {
+    this.appear1 = true
+  }
+
+  up2(): void {
+    this.appear2 = true
+  }
+
+  changeSort(type: string): void {
+    this.type = type
+    this.appear = false
+    this.appear1 = false
+    this.appear2 = false
   }
 
   closePopap(): void {
@@ -33,16 +59,13 @@ blackSkrin = false
     this.blackSkrin = true
   }
 
-    addUser(): void {
-     console.log('word', this.FirstName)
-     console.log('word', this.lastName)
-     console.log('word', this.number)
-     let userObject: User = {
+  addUser(): void {
+    let userObject: User = {
       FirstNames: this.FirstName,
       lastNames: this.lastName,
-      numbers: this.number     
-     }
-     
+      numbers: this.number
+    }
+
     this.blackSkrin = false
     this.popap = false
     this.result.push(userObject)

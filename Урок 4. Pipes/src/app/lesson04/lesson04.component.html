@@ -1,0 +1,69 @@
+
+<div *ngIf="blackSkrin" class="i" (click)="closePopap()"></div>
+
+<div class="angular">
+    <h1 class="angular-users-task"> My phone book! </h1>
+</div>
+
+<div class="search">
+    <input class="search-input" type="text">
+     <button class="search-btn" (click)="addPhone()"> появись </button>
+</div>
+
+<div class="container">
+
+
+
+    <div class="popap" *ngIf="popap">
+        <div class="popap-boxOne">
+            <p > Add phone </p>
+            <button class="popap-btnClose" (click)="closePopap()">x</button>
+        </div>
+        <div class="popap-boxTwo">
+            <p> First name </p>
+            <input class="user-text" type="text" [(ngModel)]="FirstName">
+
+            <p> Last name </p>
+            <input class="user-text" type="text" [(ngModel)]="lastName" >
+
+            <p> Number </p>
+            <input class="user-text" type="text" [(ngModel)]="number" >
+        </div>
+        <div class="popap-boxThree">
+
+            <button class="button-add" *ngIf="!editStatus" (click)="addUser()"
+             [disabled]="!FirstName || this.result.length === 6 ">
+             Add phone
+            </button> 
+
+            <button class="button-save" *ngIf="editStatus" (click)="saveUser()"> save </button>
+        </div>
+
+    
+
+</div>    
+
+    <div class="users-data">
+        <div class="users-data-name">
+            <div class="users-data-name-inform1"> # </div>
+            <div class="users-data-name-inform"> First name </div>
+            <div class="users-data-name-inform"> Last name </div>
+            <div class="users-data-name-inform4"> Number </div>
+            <div class="users-data-name-inform"> edit </div>
+            <div class="users-data-name-inform"> delete </div> 
+        </div>
+        
+
+        <div class="user" *ngFor="let item  of result; index as i">
+            <div class="user-inform1">{{i+1}}</div>
+            <div class="user-inform">{{item.FirstNames}}</div>
+            <div class="user-inform">{{item.lastNames}}</div>
+            <div class="user-inform4">{{item.numbers}}</div>
+            <div class="user-inform"><button class="bottom-edit" (click)="editUser(i)"> edit </button></div>  
+            <div class="user-inform"><button class="bottom-delit" (click)="deliteUser(i)" > delit </button></div>           
+       </div> 
+
+    </div>
+        
+</div>
+

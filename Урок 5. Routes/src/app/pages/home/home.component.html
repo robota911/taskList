@@ -1,24 +1,47 @@
-
-
 <section class="section">
 
-<p>home works!</p>
-
     <div class="box">
-<app-lesson1></app-lesson1>
-<a [routerLink]="['/Logos/Lesson1']" routerLinkActive="active" class="button">leson1</a>
-
-</div>
-
-<div class="box">
-    <app-lesson2></app-lesson2>
-    <a [routerLink]="['/Logos/Lesson2']" routerLinkActive="active" class="button">leson2</a>
-
+        <div class="box-title">
+            Angular list of prohibited words
+        </div>
+        <div class="picture">
+            <img src="../../../assets/lesson1.png" alt="">
+        </div>
+        <div class="text-red">
+            Angular list of prohibited words
+        </div>
+        <div class="box-button">
+            <a [routerLink]="['/Logos/Lesson1']" routerLinkActive="active" class="button">Details</a>
+        </div>
     </div>
 
     <div class="box">
-        <app-lesson3></app-lesson3>
-    <a [routerLink]="['/Logos/Lesson3']" routerLinkActive="active" class="button">leson3</a>
-
+        <div class="box-title">
+            Angular tasck list
         </div>
+        <div class="picture">
+            <img src="../../../assets/lesson2.png" alt="">
+        </div>
+        <div class="text-red">
+            Angular tasck list
+        </div>
+        <div class="box-button">
+            <a [routerLink]="['/Logos/Lesson2']" routerLinkActive="active" class="button">Details</a>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-title">
+            Angular users list
+        </div>
+        <div class="picture">
+            <img src="../../../assets/lesson3.png" alt="">
+        </div>
+        <div class="text-red">
+            Angular users list
+        </div>
+        <div class="box-button">
+            <a [routerLink]="['/Logos/Lesson3']" routerLinkActive="active" class="button">Details</a>
+        </div>
+    </div>
 </section>

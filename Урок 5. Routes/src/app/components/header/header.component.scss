@@ -1,11 +1,11 @@
-
-
-
-
-.section-titl{
-    width: 80%;
+.section-titl {
+    width: 100%;
     height: 60px;
-    background-color: brown;
-    margin: 0 auto;
-    text-align: center;
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
 }

@@ -13,6 +13,7 @@ import { Lesson1Component } from './pages/logos/lesson1/lesson1.component';
 import { Lesson2Component } from './pages/logos/lesson2/lesson2.component';
 import { Lesson3Component } from './pages/logos/lesson3/lesson3.component';
 import { LogosComponent } from './pages/logos/logos.component';
+import { Lesson003Component } from './pages/logos/lesson3/lesson003/lesson003.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { LogosComponent } from './pages/logos/logos.component';
     Lesson2Component,
     Lesson3Component,
     HomeComponent,
-    LogosComponent
+    LogosComponent,
+    Lesson003Component
   ],
   imports: [
     BrowserModule,

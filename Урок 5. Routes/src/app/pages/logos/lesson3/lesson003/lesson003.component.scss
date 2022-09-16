@@ -1,24 +1,22 @@
-.angular {
-    width: 100%;
-    background-color: gainsboro;
+.angular{
+    margin: 0 auto;
+    width: 900px;
+    border-top: solid gainsboro;
     height: 60px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
-    flex-wrap: nowrap;
-    margin-bottom: 30px;
+    flex-wrap: nowrap
 }
-
-h1 {
+h1{
+    margin: 0 auto;
+}
+h3{
     margin: 0 auto;
 }
 
-h3 {
-    margin: 0 auto;
-}
-
-.container {
+.container{
     width: 900px;
     height: 400px;
     border-top: gainsboro solid;
@@ -28,21 +26,17 @@ h3 {
     align-items: center;
 }
 
-.registration,
-.save {
+.registration, .save{
     width: 100%;
     display: flex;
     flex-direction: row;
     padding: 0px 10px;
     flex-wrap: nowrap;
 }
-
-p {
+p{
     margin: 20px 0 2px;
 }
-
-.user-text,
-.input-save {
+.user-text, .input-save{
     width: 100%;
     height: 30px;
     border-radius: 6px;
@@ -51,16 +45,16 @@ p {
     margin: 10px 5px 10px 0px;
     padding-left: 10px;
 }
-
-.users-data {
+.users-data{
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
     flex-direction: column;
+    // width: 660px;
     align-items: flex-start;
+    // padding: 20px 10px 0 15px;
 }
-
-.users-data-name {
+.users-data-name{
     display: flex;
     width: 100%;
     height: 25px;
@@ -71,22 +65,16 @@ p {
     text-align: center;
     margin-bottom: 7.5px;
 }
-
-.users-data-name-inform,
-.users-data-name-inform1,
-.users-data-name-inform4 {
+.users-data-name-inform, .users-data-name-inform1, .users-data-name-inform4{
     width: 180px;
 }
-
-.users-data-name-inform1 {
+.users-data-name-inform1{
     width: 20px;
 }
-
-.users-data-name-inform4 {
+.users-data-name-inform4{
     width: 160px;
 }
-
-.user {
+.user{ 
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
@@ -96,33 +84,25 @@ p {
     align-items: center;
     border-bottom: solid gainsboro;
 }
-
-.user-inform,
-.user-inform1,
-.user-inform4 {
+.user-inform, .user-inform1, .user-inform4{
     width: 180px;
     margin-bottom: 15px;
 }
-
-.user-inform1 {
+.user-inform1{
     width: 20px;
 }
-
-.user-inform4 {
+.user-inform4{
     width: 160px;
     margin-bottom: 35px;
+    // color: red;
 }
-
-.In-progress {
+.In-progress{
     color: red;
 }
-
-.done {
+.done{
     color: green;
 }
-
-.button-add,
-.button-save {
+.button-add, .button-save{
     background: green;
     border-radius: 6px;
     border: none;
@@ -133,16 +113,14 @@ p {
     margin: 10px 0px 10px 5px;
 }
 
-.button-edit,
-.button-delit {
+.button-edit, .button-delit{
     border-radius: 6px;
     border: none;
     width: 68px;
     height: 35px;
     background: rgb(229, 233, 3);
 }
-
-.button-delit {
+.button-delit{
     background: red;
     width: 98px;
 }

@@ -1,22 +1,68 @@
-.section-menu, .home{
-    width: 80%;
+.section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
     height: 60px;
-    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.nav {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-end;
+    list-style-type: none;
+    padding: 0;
 }
-.button{
-    width: 80px;
-    border: solid 3px red;
+
+.nav-item {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
-.active{
-    width: 70px;
-    border: solid 3px gray;
+
+.nav-item-back {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px blue solid;
+    width: 1440px;
+    height: 40px;
+}
+
+.nav-link {
+    width: 150px;
+    height: 40px;
     color: green;
+    border-bottom: 3px blue solid;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
-.active-home{
+
+.active {
+    border: 3px blue solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: blue;
+    border-bottom: none;
+}
+
+.bacK-to {
+    color: red;
+}
+
+.active-home {
     color: blue;
     width: 50px;
     border: solid 3px gray;

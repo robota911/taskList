@@ -1,1 +1,16 @@
-<p>lesson3 works!</p>
+<div class="angular">
+    <h1 class="angular-users-task">Plan your day!</h1>
+    <h3>User: ZSU soldier . Count of task 6</h3>
+</div>
+
+<div class="container">
+    <div class="registration">
+        <input class="user-text" type="text" [(ngModel)]="login">
+        <button class="button-add" (click)="addUser()" [disabled]="!login || this.result.length === 6 ">
+            Add user
+        </button>
+
+    </div>
+    <app-lesson003 [result]="result"></app-lesson003>
+
+</div>

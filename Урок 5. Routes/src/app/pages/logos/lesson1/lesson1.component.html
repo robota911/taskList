@@ -1,0 +1,23 @@
+
+
+<!-- <app-logos></app-logos> -->
+<div class="header">Angular list of prohibited words </div>
+<div class="box">
+    <div class="bed">
+        <p>Bad words:</p>
+        <div class="bed-word">
+            <div *ngFor="let item of  bedWord" class="bed-word-item"> {{item}}</div>
+        </div>
+    </div>
+    <div>
+        <input type="text" [class]="inp" [(ngModel)]="textInput" (keydown)="inputGreen()" placeholder="word here ...">
+        <button class="dtn1" (click)="add()">add</button>
+        <button class="dtn2"> ok</button>
+    </div>
+    <div>
+        <textarea name="" id="" cols="30" rows="10" [(ngModel)]="textAreaValue" placeholder="word here ..."></textarea>
+    </div>
+    <div>
+        <button class="dtn3" (click)="cenzor()"> ok</button>
+    </div>
+</div>

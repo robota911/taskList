@@ -1,0 +1,96 @@
+.header {
+    width: 80%;
+    height: 60px;
+    background-color: gainsboro;
+    color: darkgreen;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 40px;
+    margin: 0 auto;
+}
+
+.box {
+    width: 700px;
+    height: 300px;
+    background: gainsboro;
+    margin: 10px auto;
+}
+
+.bed {
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.bed-word {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.bed-word-item {
+    color: red;
+    margin-left: 5px;
+}
+
+.input {
+    width: 420px;
+    height: 40px;
+    margin: 0px 10px 0px 10px;
+    border-radius: 10px;
+    border: none;
+    outline-color: red;
+    padding-left: 10px;
+}
+
+.input1 {
+    width: 420px;
+    height: 40px;
+    margin: 0px 10px 0px 10px;
+    border-radius: 10px;
+    outline-color: lawngreen;
+    padding-left: 10px;
+}
+
+.input2 {
+    width: 420px;
+    height: 40px;
+    margin: 0px 10px 0px 10px;
+    border-radius: 10px;
+    outline-color: red;
+    padding-left: 10px;
+}
+
+textarea {
+    margin: 10px 0px 10px 10px;
+    width: 95%;
+    padding-left: 10px;
+}
+
+.dtn1 {
+    width: 110px;
+    height: 40px;
+    background: yellow;
+    border-radius: 10px;
+    border: none;
+    margin-right: 5px;
+}
+
+.dtn2 {
+    width: 110px;
+    height: 40px;
+    background: red;
+    border-radius: 10px;
+    border: none;
+    margin-left: 5px;
+}
+
+.dtn3 {
+    width: 97%;
+    height: 40px;
+    margin-left: 1.7%;
+    background: green;
+    border-radius: 10px;
+    border: none;
+}

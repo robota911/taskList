@@ -1,0 +1,24 @@
+.section-menu, .home{
+    width: 80%;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+.button{
+    width: 80px;
+    border: solid 3px red;
+}
+.active{
+    width: 70px;
+    border: solid 3px gray;
+    color: green;
+}
+.active-home{
+    color: blue;
+    width: 50px;
+    border: solid 3px gray;
+    color: green;
+}

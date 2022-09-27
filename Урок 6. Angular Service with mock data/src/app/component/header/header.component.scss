@@ -1,0 +1,22 @@
+.my-section-sign-in{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.ma-form-sign-in{
+    background-color: aquamarine;
+    width: 100vmin;
+    height: 55vmin;
+    padding: 3vmin;
+    border-radius: 20px;
+}
+
+form{
+    max-width: 80vmin;
+    margin: 200px auto;
+    background-color: lightblue;
+    padding: 5vmin;
+}

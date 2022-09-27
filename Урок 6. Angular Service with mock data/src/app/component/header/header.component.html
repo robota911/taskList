@@ -1,0 +1,102 @@
+<nav class="navbar bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" [routerLink]="['/']">Angular blog</a>
+
+    <div class="btn-group" role="group" aria-label="Basic outlined example"
+      [style.display]="btnHome ? 'block' : 'none' ">
+      <a class="btn  btn-outline-success" aria-current="page" (click)="btnSignIn()">Sign in</a>
+      <a href="#" class="btn  btn-outline-primary" (click)="btnSignUp()">Sign Up</a>
+    </div>
+
+    <!-- this buton for the admin or user -->
+
+    <div class="btn-group" role="group" aria-label="Basic outlined example"
+      [style.display]="btnYellow ? 'block' : 'none' ">
+      <a class="btn  btn-outline-success" aria-current="page" (click)="addPostClose()">Add post</a>
+      <a class="btn  btn-warning">
+        {{ !adminUser ? 'admin' : user }}
+      </a>
+      <a class="btn  btn-outline-warning" [routerLink]="['/']" (click)="btnsignOut()">Sign Out</a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- popap for admin -->
+
+<div [style.display]="btnPopap ? 'flex' : 'none '" class="modal my-section-sign-in" tabindex="-1">
+
+  <div class="ma-form-sign-in">
+
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-dark me-2" (click)="btnClose()">Close</button>
+      <button class="btn btn-primary" [routerLink]="['/admin']" (click)="btnSubmit()">
+        Submit
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- popap for user -->
+
+<div [style.display]="btnPopapUser ? 'flex' : 'none '" class="modal my-section-sign-in" tabindex="-1">
+
+  <div class="ma-form-sign-in">
+
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="user">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-dark me-2" (click)="btnClose()">Close</button>
+      <button class="btn btn-primary" [routerLink]="['/user']" (click)="btnSubmitUser()">
+        Submit
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- popap for add mesage -->
+
+
+<div [style.display]="postAdd ? 'block' : 'none '" class="modal" tabindex="-1">
+  <form>
+    <div class="mb-3">
+      <label for="title" class="form-label">title</label>
+      <input [(ngModel)]="title" name="title" type="text" class="form-control" id="title">
+    </div>
+    <div class="mb-3">
+      <label for="text" class="form-label">text</label>
+      <input [(ngModel)]="text" name="text" type="text" class="form-control" id="text">
+    </div>
+
+    <button *ngIf="!editStatus" [disabled]="!title" type="button" class="btn btn-success"
+      (click)="addAdmin()">Add</button>
+    <button *ngIf="editStatus" [disabled]="!title" type="button" class="btn btn-warning"
+      (click)="saveAdmin()">Save</button>
+    <button type="button" class="btn btn-warning" (click)="postClose()">Close</button>
+  </form>
+</div>

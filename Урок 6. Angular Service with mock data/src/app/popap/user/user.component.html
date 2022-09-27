@@ -1,0 +1,73 @@
+<div class="card m-3 " *ngFor="let mesage of userArea">
+  <div class="row g-0  d-flex justify-content-end">
+
+    <div class="col-md-9 col-lg-9 col-xl-9">
+      <div class="card-body">
+        <h5 class="card-title">{{mesage.title}}</h5>
+        <!--{{ mesage.id }} -->
+        <p class="card-text">
+          Posted by: Admin
+          <!-- {{ mesage.user }} -->
+        </p>
+        <p class="card-text">
+          <!-- Sign up to create your account and start to use Angular blog -->
+          {{ mesage.text }}
+        </p>
+
+      </div>
+    </div>
+    <div class="col-md-3 col-lg-3 col-xl-3 d-flex align-items-center">
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+
+    <div class="btn-group col-2 m-3 " role="group" aria-label="Basic mixed styles example">
+      <button (click)="editUser(mesage)" type="button" class="btn btn-warning ">Edit</button>
+
+      <button [disabled]="editStatus" (click)="delitAdmin(mesage)" type="button" class="btn btn-danger">Delite</button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- <div [style.display]="postAdd ? 'block' : 'none '" class="modal" tabindex="-1" > -->
+<div [style.display]="postAdd ? 'block' : 'none '" class="modal" tabindex="-1">
+
+
+  <form>
+    <div class="mb-3">
+      <label for="title" class="form-label">title</label>
+      <input [(ngModel)]="title" name="title" type="text" class="form-control" id="title">
+    </div>
+    <div class="mb-3">
+      <label for="text" class="form-label">text</label>
+      <input [(ngModel)]="text" name="text" type="text" class="form-control" id="text">
+    </div>
+
+    <button *ngIf="!editStatus" [disabled]="!title" type="button" class="btn btn-success"
+      (click)="addUser()">Add</button>
+    <button *ngIf="editStatus" [disabled]="!title" type="button" class="btn btn-warning"
+      (click)="saveAdmin()">Save</button>
+    <button type="button" class="btn btn-warning" (click)="addPostClose()">Close</button>
+
+  </form>
+</div>
+
+
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

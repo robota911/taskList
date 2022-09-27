@@ -1,0 +1,12 @@
+div{
+    max-width: 100%;
+    height: 10vmin;
+    color: honeydew;
+    background-color: black;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}

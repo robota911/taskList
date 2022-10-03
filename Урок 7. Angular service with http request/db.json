@@ -1,0 +1,34 @@
+{
+  "admin": [
+    {
+      "author": "мартін",
+      "title": "текст",
+      "text": "тексту має бути багато",
+      "id": 11
+    },
+    {
+      "author": "Олекси",
+      "title": "Тема",
+      "text": "Дуже багато тексту",
+      "id": 12
+    },
+    {
+      "title": "there is tema",
+      "id": 13,
+      "author": "there is author",
+      "text": "there is text"
+    },
+    {
+      "author": "33334",
+      "title": "555",
+      "text": "end",
+      "id": 14
+    },
+    {
+      "author": "33334",
+      "title": "aaaa",
+      "text": "asdf",
+      "id": 15
+    }
+  ]
+}

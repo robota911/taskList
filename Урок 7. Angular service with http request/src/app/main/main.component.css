@@ -1,0 +1,24 @@
+.header {
+    max-width: 100%;
+    height: 10vmin;
+    background-color: black;
+    display: flex;
+
+    font-size: 3vmin;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+}
+
+.blog,
+.admin {
+    margin: auto 3vmin;
+    text-decoration: none;
+    color: azure;
+}
+
+.activ {
+    color: darkgray;
+}

@@ -1,0 +1,45 @@
+<div class="container">
+  <form>
+
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Title here..." [(ngModel)]="title" name="a">
+    </div>
+
+    <div class="mb-3">
+      <textarea class="form-control" placeholder="text here..." rows="3" [(ngModel)]="text" name="b"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Author here..." [(ngModel)]="author" name="c">
+    </div>
+
+    <div class="mb-3">
+      <button [disabled]="!title" type="button" class="btn  btn-dark d-flex" (click)="addBlog()">Add</button>
+      <button type="submit" class="btn  btn-dark d-flex" (click)="saveBlog()">Save</button>
+    </div>
+
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Text</th>
+        <th scope="col">Author</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delite</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let table of adminBlog; let i = index">
+      <tr>
+        <th scope="row">{{ i +1 }}</th>
+        <td>{{ table.title }}</td>
+        <td>{{ table.text }}</td>
+        <td>{{ table.author }}</td>
+        <td> <button type="button" class="btn  btn-dark " (click)="editBlog(table)">Edit</button></td>
+        <td> <button type="button" class="btn  btn-dark " (click)="deleteBlog(table)">Delite</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
